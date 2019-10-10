@@ -81,7 +81,7 @@ Example: Detecting encodings of multiple files
     for filename in glob.glob('*.xml'):
         print filename.ljust(60),
         detector.reset()
-        for line in file(filename, 'rb'):
+        for line in open(filename, 'rb'):
             detector.feed(line)
             if detector.done: break
         detector.close()
